@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+  </head>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      font-size: 12px;
+    }
+    table, td{
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    table{
+      width: 650px;
+    }
+    td{
+      padding: 5px;
+    }
+    .title{
+      background: gray;
+      color: white;
+      text-align: center;
+    }
+    .address{
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .tdw{
+      width: 100px;
+    }
+    #address1{
+      margin-bottom: 3px;
+    }
+    #ad_td{
+      padding: 5px;
+    }
+    #main{
+      margin-left: 10px;
+      margin-top: 10px;
+    }
+  </style>
+  <body>
+    <div id="main">
+      <form action="" name="frm" method="get">
+        <table>
+          <tr>
+            <td class="title">
+              <label>이름</label>
+            </td class="title">
+            <td>
+              <input type="text" name="name" id="name" class="tdw">
+            </td>
+          </tr>
+          <tr>
+            <td class="title">
+              <label>아이디</label>
+            </td class="title">
+            <td>
+              <input type="text" name="id" id="id" class="tdw">
+            </td>
+          </tr>
+          <tr>
+            <td class="title">
+              <label>비밀번호</label>
+            </td class="title">
+            <td>
+              <input type="password" name="pwd" id="pwd" class="tdw">
+            </td>
+          </tr>
+          <tr>
+            <td class="title">
+              <label>비밀번호 확인</label>
+            </td class="title">
+            <td>
+              <input type="password" name="pwdC" id="pwdC" class="tdw">
+            </td>
+          </tr>
+          <tr>
+            <td class="title">
+              <label>생년월일/성별</label>
+            </td class="title">
+            <td>
+              <input type="date" name="birth" id="birth">
+              <input type="radio" name="gender" id="boy" value="boy">
+              <label for="boy">남자</label>
+              <input type="radio" name="gender" id="girl" value="girl">
+              <label for="girl">여자</label>
+            </td>
+          </tr>
+          <tr>
+            <td class="title">
+              <label>이메일</label>
+            </td class="title">
+            <td>
+              <input type="text" name="email1" id="email1" class="tdw">@
+              <input type="text" name="email2" id="email2" class="tdw">
+              <select name="email" id="email">
+                <option value="">메일주소선택</option>
+                <option value="naver.com">naver.com</option>
+                <option value="google.com">google.com</option>
+                <option value="daum.net">daum.net</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td class="title">
+              <label>우편번호</label>
+            </td class="title">
+            <td>
+              <input type="text" name="post" id="post" class="tdw">
+            </td>
+          </tr>
+          <tr>
+            <td class="title">
+              <label>주소</label>
+            </td class="title">
+            <td>
+              <input type="text" name="address1" id="address1" class="address"><br/>
+              <input type="text" name="address2" id="address2" class="address">
+            </td>
+          </tr>
+        </table>  
+      </form>
+    </div>
+  </body>
+  </html>

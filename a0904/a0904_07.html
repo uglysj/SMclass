@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <title>form</title>
+    <style>
+      #pwdTxt{
+        font-weight: 700;
+      }
+      .on{
+        color: blue;
+      }
+      .off{
+        color: red;
+      }
+      .address{
+        width: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main">
+      <h3>회원가입</h3>
+      <form action="" name="frm" method="get">
+        <label>이름</label>
+        <input type="text" name="name" id="name"><br/>
+        <label>아이디</label>
+        <input type="text" name="id" id="id">
+        <button type="button" id="idM">아이디중복확인</button><br/>
+        <label>비밀번호</label>
+        <input type="password" name="pwd" id="pwd"><br/>
+        <label>비밀번호 확인</label>
+        <input type="password" name="pwdM" id="pwdM" onkeyup="pwdCheck()">
+        <span id="pwdTxt"></span><br/>
+        <label>생년월일/성별</label>
+        <input type="date" name="birth" id="birth">
+        <input type="radio" name="gender" id="boy" value="boy">
+        <label for="boy">남자</label>
+        <input type="radio" name="gender" id="girl" value="girl">
+        <label for="girl">여자</label>
+        <br/>
+        <label>이메일</label>
+        <input type="text" name="email1" id="email1">@
+        <input type="text" name="email2" id="email2">
+        <select name="email" id="email" onchange="emailChange()">
+          <option value="">직접입력</option>
+          <option value="naver.com">naver.com</option>
+          <option value="google.com">google.com</option>
+          <option value="daum.net">daum.net</option>
+        </select>
+        <br/>
+        <label>우편번호</label>
+        <input type="text" name="zipcode" id="zipcode">
+        <button type="button" id="postS" onclick="addBtn()">주소검색</button><br/>
+        <label>주소</label><br/>
+        <input type="text" name="address1" id="address1" class="address"><br/>
+        <input type="text" name="address2" id="address2" class="address">
+        <br/><br/>
+        <button type="button">회원가입</button>
+        <input type="reset" value="취소">
+      </form>
+    </div>
+    <script>
+      function emailChange(){
+        var email = document.getElementById('email').value;
+        if(email == ""){
+          document.getElementById('email2').readOnly = false;
+          document.getElementById('email2').value = "";
+          document.getElementById('email2').focus();
+        } else {
+          document.getElementById('email2').value = email;
+          document.getElementById('email2').readOnly = true;
+        }
+      }
+      
+      function pwdCheck(){
+        var pwd = document.getElementById('pwd').value;
+        var pwdM = document.getElementById('pwdM').value;
+        if(pwd == pwdM){
+          document.getElementById('pwdTxt').innerText = "비밀번호가 일치합니다.";
+          document.getElementById('pwdTxt').classList.remove("off");
+          document.getElementById('pwdTxt').classList.add("on");
+        } else {
+          document.getElementById('pwdTxt').innerText = "비밀번호가 일치하지 않습니다.";
+          document.getElementById('pwdTxt').classList.remove("on");
+          document.getElementById('pwdTxt').classList.add("off");
+        }
+      }
+
+      function addBtn(){
+        // alert("다음주소를 호출합니다.");
+        new daum.Postcode({
+          oncomplete: function(data) {
+              // 우편번호
+              document.getElementById('zipcode').value = data.zonecode;
+              // 주소
+              document.getElementById('address1').value = data.address;
+              document.getElementById('address2').focus();
+          }
+        }).open();
+      }
+    </script>
+  </body>
+</html>
