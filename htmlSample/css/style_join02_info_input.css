@@ -3,11 +3,6 @@
 * { margin: 0px; padding: 0px;}
 ul, ol{ list-style-type: none; }
 
-@charset "UTF-8";
-
-* { margin: 0px; padding: 0px;}
-ul, ol{ list-style-type: none; }
-
 /* header */
 #nav_up {
 	width: 100%; height: 35px;
@@ -791,7 +786,13 @@ input[type="checkbox"]:not(old):checked + label {
 	border: 1px solid #fff;
 }
 
+.on{
+	color: blue;
+}
 
+.off{
+	color: red;
+}
 
 
 

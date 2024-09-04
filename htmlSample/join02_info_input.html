@@ -459,8 +459,12 @@
 
 				if(pwd == pwd2){
 					document.getElementById('pwdTxt').innerText = "비밀번호가 일치합니다."
+					document.getElementById('pwdTxt').classList.remove("off");
+					document.getElementById('pwdTxt').classList.add("on");
 				} else {
 					document.getElementById('pwdTxt').innerText = "비밀번호가 일치하지 않습니다."
+					document.getElementById('pwdTxt').classList.remove("on");
+					document.getElementById('pwdTxt').classList.add("off");
 				}
 			}
 
