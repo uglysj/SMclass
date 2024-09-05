@@ -155,7 +155,7 @@
 							<input type="text" id="f_postal" name="f_postal" required />
 							<span>-</span>
 							<input type="text" id="l_postal" name="l_postal" required />
-							<input type="button" value="우편번호" onclick="addBtn()"/>
+							<input type="button" value="우편번호" onclick="addrBtn()"/>
 							<input type="text" id="address1" name="address1" required />
 							<input type="text" id="address2" name="address2" required />
 						</dd>
@@ -468,7 +468,7 @@
 				}
 			}
 
-			function addBtn(){
+			function addrBtn(){
 				new daum.Postcode({
 					oncomplete: function(data) {
 						document.getElementById('f_postal').value = data.zonecode;

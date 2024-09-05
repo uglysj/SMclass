@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <title>font</title>
+    <style>
+      h3{
+        width: 300px;
+        height: 100px;
+        border: 1px solid black;
+        white-space: nowrap; /* 줄단락을 없앰 */
+        overflow: hidden; /* 공간 바깥으로 나간 글자 숨김 */
+        text-overflow: ellipsis; /* 말줄임표 */
+      }
+      h3:hover{ /* hover = 마우스 포인터가 위로 올라가면 이벤트 발생 */
+        white-space: normal;
+        overflow: visible;
+      }
+      div{
+        width: 300px;
+        height: 100px;
+        border: 1px solid black;
+        /* white-space: nowrap; */
+        overflow: scroll;
+      }
+      h2{
+        width: 800px;
+        height: 200px;
+        border: 1px solid black;
+        word-spacing: 40px; /* 단어 간격 */
+        letter-spacing: 30px; /* 글자간격 = 자간 */
+        text-shadow: 35px 35px 35px #f00; /* 폰트 그림자 */
+        text-decoration: line-through; /* line-through, overline, underline, none */
+        font-size: 50px;
+        /* 글자 색상 */
+        /* color: rgb(0, 0, 0, 70%);  투명도 설정 가능 */
+        /* color: black;  문자로 색상 적용 */
+        color: #4e4f24;  /* 16진수 코드 적용 */
+        line-height: 200px; /* 세로 가운데 정렬 */
+        margin: 0 auto; /* 사각모델을 가운데 정렬 */
+        text-align: center; /* 글자 가운데 정렬 */
+        /* padding-top: 60px; box-sizing: border-box; 세로 가운데 정렬 */
+      }
+      p{
+        width: 400px;
+        height: 500px;
+        border: 1px solid black;
+        font-size: 17px;
+        font-weight: 700;
+        line-height: 60px; /* 줄간격 */
+        text-align: justify;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>
+      실제로 밥을 먹고 난 다음에 앉아 있는 시간이 길수록 대사증후군이 생길 위험이 커진다는 연구 결과가 있다.
+    </h3>
+    <div>
+      분해된 것들은 에너지로 사용할 수 있는데, 식사를 마친 후에 바로 앉거나 누우면 신체 활동량이 없어 영양소가 에너지원으로 쓰이지 않고 지방으로 변환된다. 실제로 밥을 먹고 난 다음에 앉아 있는 시간이 길수록 대사증후군이 생길 위험이 커진다는 연구 결과가 있다.
+    </div>
+    <h2>글꼴 관련 스타일</h2>
+    <p>
+      우리가 먹은 음식은 포도당·아미노산·지방산 등 작은 단위로 쪼개진다. 분해된 것들은 에너지로 사용할 수 있는데, 식사를 마친 후에 바로 앉거나 누우면 신체 활동량이 없어 영양소가 에너지원으로 쓰이지 않고 지방으로 변환된다. 실제로 밥을 먹고 난 다음에 앉아 있는 시간이 길수록 대사증후군이 생길 위험이 커진다는 연구 결과가 있다.
+      식사 후에는 바로 앉지 말고, 20분이라도 산책하는 게 좋다. 이 정도만 움직여도 지방으로 바뀌는 포도당의 양을 대폭 줄일 수 있다. 비만이거나 대사증후군이 있으면 혈당을 낮추는 인슐린 호르몬이 제구실을 하지 못해, 포도당이 지방으로 바뀌는 속도가 일반 사람보다 빠르다. 식사 후에 꼭 몸을 움직여야 한다.
+    </p>
+  </body>
+</html>
