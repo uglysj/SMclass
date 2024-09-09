@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+  </head>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    img{
+      width: 200px;
+      display: inline-block;
+    }
+    #i01:hover{
+      /* display: none;  공간과 이미지 둘다 제거*/
+      /* visibility: hidden;  이미지만 제거 */
+      visibility: hidden;
+    }
+    span{
+      width: 200px;
+      height: 100px;
+      display: inline;
+      padding-left: 30px;
+      margin-left: 50px;
+    }
+    #s01{
+      background: yellow;
+      border: 3px solid black;
+    }
+    #s02{
+      background: green;
+      border: 3px solid black;
+    }
+    #s03{
+      background: gray;
+      border: 3px solid black;
+    }
+  </style>
+  <body>
+    <span id="s01">가나다</span>
+    <span id="s02">가나다</span>
+    <span id="s03">가나다</span>
+    <br/>
+    <img src="images/a01.jpg">
+    <img src="images/a02.jpg" id="i01">
+    <img src="images/a03.jpg">
+  </body>
+</html>
