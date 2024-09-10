@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <title>선택자</title>
+    <style>
+      *{margin: 0; padding: 0;}
+      li{width: 120px; height: 40px; text-align: center; border: 1px solid black; line-height: 40px;}
+      #bColor_P{background: pink;}
+      .bColor_Y{background: yellow;}
+      .bColor_G{background: green;}
+      #u01 li:nth-of-type(2), #u01 li:nth-of-type(7){background: yellow;}
+      #u02{color: blue; font-weight: 900;}
+      #u02 li:nth-child(2n){font-size: 25px; font-weight: 800;}
+      #u02 li:nth-child(2n+1){color: orange;}
+      #u02 li:nth-child(2), #u02 li:nth-child(7){background: yellow;}
+      #u02 li:nth-child(3){background: pink;}
+      #u02 li:nth-child(4), #u02 li:nth-child(6){background: green;}
+      #u02 li:first-child{border-top-left-radius: 10px; border-top-right-radius: 10px;}
+      #u02 li:last-child{border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;}
+
+    </style>
+  </head>
+  <body>
+    <h2>건강에 좋은 식품</h2>
+    <ul id="u01">
+      <li>블루베리</li>
+      <li>귀리</li>
+      <h2>h2태그</h2>
+      <li>토마토</li>
+      <li>시금치</li>
+      <li>적포도주</li>
+      <li>브로콜리</li>
+      <li>견과류</li>
+    </ul>
+    <hr>
+    <h2>건강에 좋은 식품2</h2>
+    <ul id="u02">
+      <li>블루베리</li>
+      <li>귀리</li>
+      <h2>h2태그</h2>
+      <li>토마토</li>
+      <li>시금치</li>
+      <li>적포도주</li>
+      <li>브로콜리</li>
+      <li>견과류</li>
+    </ul>
+    <hr>
+    <h2>건강에 좋은 식품3</h2>
+    <ul>
+      <li>블루베리</li>
+      <li class="bColor_Y">귀리</li>
+      <li id="bColor_P">토마토</li>
+      <li class="bColor_G">시금치</li>
+      <li>적포도주</li>
+      <li class="bColor_G">브로콜리</li>
+      <li class="bColor_Y">견과류</li>
+    </ul>
+  </body>
+</html>
