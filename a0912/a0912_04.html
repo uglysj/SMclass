@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3와 애니메이션</title>
+    <style>
+      div{width: 100px; height: 100px; background: darkcyan; border: 2px solid black;
+      /* animation-name: chg-back;
+      animation-duration: 3s;
+      animation-timing-function: ease-in;
+      animation-delay: 1s; */
+      /* animation-direction: alternate; normal, alternate : 양방향 */
+      /* animation-iteration-count: infinite; infinite : 무한 */
+      
+      animation: chg-back 1s infinite alternate, rotate 2s infinite alternate;
+    } 
+      @keyframes rotate{
+        from{
+          transform: perspective(120px) rotateX(0deg);
+        }
+        to{
+          transform: perspective(120px) rotateX(180deg);
+        }
+      }
+
+      @keyframes chg-back{
+        from{
+          background: darkcyan;
+          border: 2px solid black;
+        }
+        to{
+          background: cyan;
+          border: 3px solid gray;
+          border-radius: 50%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+  </body>
+</html>
