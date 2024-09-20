@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구구단</title>
+  </head>
+  <body>
+    <script>
+      var num = parseInt(Math.random()*100+1);
+      var i = 0;
+      while(i < 10){
+        var input = Number(prompt((i+1)+"번째 도전!! 숫자를 입력하세요."));
+        if(input < num){
+          alert("입력한 숫자가 작습니다. 더 큰 수를 입력하세요.");
+        } else if(input > num){
+          alert("입력한 숫자가 큽니다. 더 작은 수를 입력하세요.");
+        } else {
+          alert("정답입니다.");
+          break;
+        }
+        i++;
+      }
+
+      document.write("랜덤 숫자 : " + num);
+
+      // var lotto = parseInt(Math.random()*45+1);
+      // document.write("로또번호 : " + lotto);
+      
+      // document.write(parseInt(Math.random()*10+1) + "<br/>");
+      // document.write(parseInt(Math.random()*100) + "<br/>");
+      // document.write(parseInt(Math.random()*45+1) + "<br/>");
+      // document.write(parseInt(Math.random()*200+1) + "<br/>");
+      // document.write(parseInt(Math.random()*150+1) + "<br/>");
+      // document.write(parseInt(Math.random()*21));
+
+      // var i = 0;
+      // while(i < 10){
+      //   document.write(i + "<br/>");
+      //   i++;
+      // }
+
+      // document.write("<hr>");
+      
+      // for(var i = 0; i < 10; i++){
+      //   document.write(i + "<br/>")
+      // }
+
+      // for(var i = 0; i <= 9; i++){
+      //   for(var j = 0; j <= 9; j++){
+      //     for(var k = 0; k <= 9; k++){
+      //       // document.write(`${i}${j}${k}<br/>`);
+      //       document.write(""+i+j+k+"<br/>");
+      //     }
+      //   }
+      // }
+
+      // for(var i = 2; i <= 9; i++){
+      //   if(i % 2 == 0){
+      //     document.write(`[${i} 단] <br/>`)
+      //     for(var j = 1; j <= 9; j++){
+      //       document.write(`${i} * ${j} = ${i * j}<br/>`);
+      //     }
+      //   }
+      //   document.write(`[${i} 단] <br/>`)
+      //   for(var j = 1; j <= 9; j++){
+      //     // if(j % 2 != 0){
+      //     //   continue; 1번만 중지
+      //     // }
+      //     if(j == 5){
+      //       break; //for문 중지
+      //     }
+      //     document.write(`${i} * ${j} = ${i * j} <br/>`);
+      //   }
+      // }
+    </script>
+  </body>
+</html>

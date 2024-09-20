@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열객체</title>
+  </head>
+  <body>
+    <script>
+      var name = prompt("이름 입력");
+      var kor = Number(prompt("국어 점수 입력"));
+      var eng = Number(prompt("영어 점수 입력"));
+      var math = Number(prompt("수학 점수 입력"));
+      var sum = kor + eng + math;
+      var avg = (sum / 3).toFixed(2);
+      document.write("이름 : " + name + "<br/>");
+      document.write("국어 : " + kor + "<br/>");
+      document.write("영어 : " + eng + "<br/>");
+      document.write("수학 : " + math + "<br/>");
+      document.write("합계 : " + sum + "<br/>");
+      document.write("평균 : " + avg + "<br/>");
+
+      // var arr = new Array(3);
+      // arr[0] = 100;
+      // arr[1] = 99;
+      // arr[2] = 98;
+      // document.write(arr[0]);
+
+      // var num1 = Number(prompt("숫자를 입력하세요."));
+      // var num2 = Number(prompt("숫자를 입력하세요."));
+      // var num3 = Number(prompt("숫자를 입력하세요."));
+      // var num4 = Number(prompt("숫자를 입력하세요."));
+      // var num5 = Number(prompt("숫자를 입력하세요."));
+      // document.write(num1 + "<br/>");
+      // document.write(num2 + "<br/>");
+      // document.write(num3 + "<br/>");
+      // document.write(num4 + "<br/>");
+      // document.write(num5 + "<br/>");
+
+      // var arr = new Array(5);
+      // for(var i = 0; i < arr.length; i++){
+      //   arr[i] = Number(prompt("숫자를 입력하세요"));
+      //   document.write(arr[i] + "<br/>");
+      // }
+    </script>
+  </body>
+</html>
