@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+*{margin: 0; padding: 0; font-size: 14px; color: #454545; box-sizing: border-box; letter-spacing: -.03em;
+list-style: none; font-family: "Nanum Gothic", sans-serif; font-weight: 400; font-style: normal;}
+a{color: inherit; text-decoration: none;}
+.pop-header{width: 650px; height: 54px; padding: 15px 20px 15px 40px; border-bottom: 3px solid #e5e5e5;
+background: url('images/bullet-h1.png') 20px 50% no-repeat; background-color: #0aaf6b; margin: 0 auto;
+position: relative;}
+.pop-header h1{font-size: 18px; font-weight: 700; color: #fff; letter-spacing: -.03em;}
+.pop-header a{width: 25px; height: 25px; display: block; background: url('images/btn-close.png') 50% 50% no-repeat;
+position: absolute; top: 12px; right: 15px;}
+.pop-body{width: 650px; height: 828px; padding: 20px; margin: 30px auto; border: 1px solid black;}
+.pop-body h3{background: url('images/bullet-h3g.png') 0 50% no-repeat; margin-bottom: 15px; padding-left: 23px;
+font-size: 18px; font-weight: 700; color: #222;}
+.pop-body h4{font-size: 14px; font-weight: 700; color: #0aaf6b; margin-bottom: 5px;}
+.pop-body p{font-size: 14px; line-height: 18px; margin-bottom: 15px;}
+.message-box{width: 610px; height: 122px; background: #F8F8F8;
+margin-bottom: 25px; padding: 25px; line-height: 24px;}
+.form{width: 610px; height: 238px; border: 1px solid #e8e8e8;
+margin: -15px 0 30px; padding: 25px; position: relative;}
+.form label{font-size: 15px; font-weight: 700; margin-right: 12px;}
+.form input[type="text"]{margin-right: 5px; padding: 0 5px; width: 60px; height: 27px; text-align: center;
+border: 1px solid #ddd; vertical-align: middle; color: #bbb; letter-spacing: 0;}
+.form span{font-size: 16px;}
+.form .dash{color: #b7b7b7; margin: 0 15px;}
+.form .compute{font-size: 16px; position: absolute; right: 25px;}
+.compute input{width: 70px; height: 27px; color: #fff; font-weight: 700; border: none; cursor: pointer; }
+.compute input[type="button"]{ background: #0aaf6b;}
+.compute input[type="reset"]{background: #656565;}
+.form dl{width: 558px; height: 48px; margin: 10px 0 8px; line-height: 24px;}
+.form dt{width: 20%; float: left; display: block;}
+.form dd{width: 80%; font-weight: 700; color: #eb4f3a; float: left; display: block;}
+.form li label{display: inline-block; width: 21%; margin: 10px 12px 5px 0; font-size: 13px; font-weight: 700;}
+.form li label.dv1{width: 18.5%;}
+.form li label.dv2{width: 14.5%;}
+.form li li{float: left; height: 35px; color: #fff; line-height: 35px; text-align: center; font-size: 13px; font-weight: 700;}
+.form li li.low-weight{width: 26%; background: #329ae3;}
+.form li li.regular{width: 20.5%; background: #95c520;}
+.form li li.overweight{width: 18.5%; background: #ee942a;}
+.form li li.obesity{width: 34.9%; background: #f15232;}

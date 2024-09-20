@@ -3,43 +3,8 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/a0919_06.css">
     <title>Document</title>
-    <style>
-      *{margin: 0; padding: 0; font-size: 14px; color: #454545; box-sizing: border-box; letter-spacing: -.09em;
-      list-style: none; text-decoration: none;}
-      a{color: inherit;}
-      .pop-header{width: 650px; height: 54px; padding: 15px 20px 15px 40px; border-bottom: 3px solid #e5e5e5;
-      background: url('images/bullet-h1.png') 20px 50% no-repeat; background-color: #0aaf6b; margin: 0 auto;
-      position: relative;}
-      .pop-header h1{font-size: 18px; font-weight: 700; color: #fff; letter-spacing: -.03em;}
-      .pop-header a{width: 25px; height: 25px; display: block; background: url('images/btn-close.png') 50% 50% no-repeat;
-      position: absolute; top: 12px; right: 15px;}
-      .pop-body{width: 650px; height: 828px; padding: 20px; margin: 30px auto; border: 1px solid black;}
-      .message-box{width: 610px; height: 122px; background: #F8F8F8;
-      margin-bottom: 25px; padding: 25px; line-height: 24px;}
-      .form{width: 610px; height: 238px; border: 1px solid #e8e8e8;
-      margin: -15px 0 30px; padding: 25px; position: relative;}
-      .form label{font-size: 15px; font-weight: 700; margin-right: 12px;}
-      .form input[type="text"]{margin-right: 5px; padding: 0 5px; width: 60px; height: 27px; text-align: center;
-      border: 1px solid #ddd; vertical-align: middle; color: #bbb; letter-spacing: 0;}
-      .form span{font-size: 16px;}
-      .form .dash{color: #b7b7b7; margin: 0 15px;}
-      .form .compute{font-size: 16px; position: absolute; right: 25px;}
-      .compute input{width: 70px; height: 27px; color: #fff; font-weight: 700; border: none; cursor: pointer; }
-      .compute input[type="button"]{ background: #0aaf6b;}
-      .compute input[type="reset"]{background: #656565;}
-      .form dl{width: 558px; height: 48px; margin: 10px 0 8px; line-height: 24px;}
-      .form dt{width: 20%; float: left; display: block;}
-      .form dd{width: 80%; font-weight: 700; color: #eb4f3a; float: left; display: block;}
-      .form li label{display: inline-block; width: 21%; margin: 10px 12px 5px 0; font-size: 13px; font-weight: 700;}
-      .form li label.dv1{width: 18.5%;}
-      .form li label.dv2{width: 14.5%;}
-      .form li li{float: left; height: 35px; color: #fff; line-height: 35px; text-align: center; font-size: 13px; font-weight: 700;}
-      .form li li.low-weight{width: 25%; background: #329ae3;}
-      .form li li.regular{width: 20%; background: #95c520;}
-      .form li li.overweight{width: 18%; background: #ee942a;}
-      .form li li.obesity{width: 36.9%; background: #f15232;}
-    </style>
     <script>
       function btn(){
         var leng_m = document.getElementById('length').value / 100;
@@ -60,6 +25,8 @@
           document.getElementById('resultText').innerText = "비만";
           document.getElementById('bmiNumber').innerText = result.toFixed(2);
         }
+        
+        document.getElementById('resultText').innerText += " 입니다.";
       }
     </script>
   </head>
@@ -110,6 +77,17 @@
           </li>
         </ul>
       </div>
+      <h3>올바른 식생활 지침</h3>
+      <h4>제때에</h4>
+      <p>신체리듬에 맞춰 규칙적으로 식사하는 것은 아주 중요합니다. 특히 아침을 거르지 맙시다.</p>
+      <h4>골고루</h4>
+      <p>다양한 식품을 선택해 부족한 영양소가 없도록 해야 합니다.</p>
+      <h4>알맞게</h4>
+      <p>표준 체중을 유지하기 위해 하루에 필요한 적정열량을 섭취하는 것은 비만과 성인병을 예방하는 기본 노력입니다.</p>
+      <h4>싱겁게</h4>
+      <p>소금의 과잉 섭취는 고혈압을 비롯한 순환기계질환의 중요 요인이 됩니다. 건강을 위해 소금 섭취를 하루에 5g이하로 줄입시다.</p>
+      <h4>즐겁게</h4>
+      <p>식사는 가능한 여럿이 함께 하는 것이 좋습니다. 가족끼리 즐겁게 하는 식사는 그 자체가 즐거움이고, 성인병 관리입니다.</p>
     </div>
   </body>
 </html>
