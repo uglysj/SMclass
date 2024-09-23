@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체</title>
+  </head>
+  <body>
+    <script>
+      // 오늘날짜를 출력하시오.
+      var tday = new Date();
+      var year = tday.getFullYear();
+      var month = tday.getMonth()+1;
+      var date = tday.getDate();
+      var day = tday.getDay();
+
+      if(month < 10) month = "0" + month;
+      if(date < 10) date = "0" + date; 
+      if(day == 0) day = "일요일";
+      else if(day == 1) day = "월요일";
+      else if(day == 2) day = "화요일";
+      else if(day == 3) day = "수요일";
+      else if(day == 4) day = "목요일";
+      else if(day == 5) day = "금요일";
+      else day = "토요일";
+      
+      document.write(year + "/" + month + "/" + date + "/" + day + "<br/>");
+
+      var num = prompt("7자리 숫자 입력");
+      var sum = 0;
+      
+      for(var i = 0; i < num.length; i++) sum += Number(num.charAt(i));
+      document.write("합계 : " + sum);
+
+    </script>
+  </body>
+</html>

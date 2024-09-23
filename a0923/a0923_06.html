@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 최대값 max, 최솟값 min
+      // var num1 = Number(prompt("숫자를 입력하세요."));
+      // var num2 = Number(prompt("숫자를 입력하세요."));
+      // var num3 = Number(prompt("숫자를 입력하세요."));
+
+      // if(num1 > num2 && num1 > num3){
+      //   document.write(num1);
+      // } else if(num2 > num1 && num2 > num3){
+      //   document.write(num2);
+      // } else {
+      //   document.write(num3);
+      // }
+
+      // document.write("<br/>");
+
+      // var result = (num1 > num2)?(num1 > num3)?num1:num3:(num2 > num3)?num2:num3;
+      // document.write(result + "<br/>");
+
+      // var n_max = Math.max(num1, num2, num3);
+      // var n_min = Math.min(num1, num2, num3);
+
+      // document.write("최댓값 : " + n_max + ", 최솟값 : " + n_min + "<br/>");
+
+      // 올림 : ceil, 버림 : floor, 반올림 : round
+      var pi = 3.1652;
+      document.write(Math.ceil(pi) + "<br/>"); // 올림
+      document.write(Math.floor(pi) + "<br/>"); // 버림
+      document.write(Math.round(pi) + "<br/>"); // 소수점 1자리에서 반올림
+      
+      // 소수점 3자리에서 반올림
+      Math.round(pi * 100) / 100;
+
+      var num = 50.2652;
+      var num_round = Math.round(num * 10) / 10;
+
+      document.write(num_round + "<br/>");
+      
+    </script>
+  </body>
+</html>
