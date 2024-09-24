@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>체크박스연습</title>
+  </head>
+  <body>
+    <h1>취미 선택</h1>
+    <form action="#" name="frm" method="get">
+      <input type="checkbox" name="hobby" id="game" value="game">
+      <label for="game">게임</label>
+      <input type="checkbox" name="hobby" id="golf" value="golf">
+      <label for="golf">골프</label>
+      <input type="checkbox" name="hobby" id="run" value="run">
+      <label for="run">조깅</label>
+      <input type="checkbox" name="hobby" id="swim" value="swim">
+      <label for="swim">수영</label>
+      <input type="checkbox" name="hobby" id="book" value="book">
+      <label for="book">독서</label>
+      <br/>
+      <button type="button" onclick="btn()">확인</button>
+    </form>
+    <script>
+      function btn(){
+        var hobby = document.querySelectorAll("input[name='hobby']");
+        var cnt = 0;
+
+        for(var i = 0; i < hobby.length; i++){
+          if(hobby[i].checked == true) cnt++;
+        }
+
+        if(cnt < 4){
+          alert("4개 이상을 골라 주셔야 합니다.");
+          if(confirm("나머지를 모두 채울까요?")){
+            for(var j = 0; j < hobby.length; j++){
+              hobby[j].checked = true;
+            }
+          }
+          return false;
+        }
+        console.log(cnt);
+        // frm.submit();
+      }
+    </script>
+  </body>
+</html>
