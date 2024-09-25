@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <title>Ajax</title>
+    <style>
+      h1{text-align: center;}
+      table, th, td{border: 1px solid black; border-collapse: collapse;}
+      table{width: 80%; margin:0 auto;}
+      th, td{width: 150px; height: 40px; text-align: center;}
+    </style>
+    <script>
+      // 제이쿼리 선언
+      $(function(){
+        $("#dataBtn").click(()=>{
+          $.ajax({
+            url: "js/stuData.json",
+            type: "get",
+            data: "",
+            dataType: "json",
+            success: function(data){
+              // console.log(data);
+              var student = "";
+              var sum = new Array(30);
+              var avg = new Array(30);
+              
+              for(var i = 0; i < data.length; i++){
+                sum[i] = data[i].kor + data[i].eng + data[i].math;
+                avg[i] = (sum[i] / 3).toFixed(2);
+              }
+
+              for(var i = 0; i < data.length; i++){
+                student += `<tr id='${data[i].no}'><td class='no'>${data[i].no}</td>`;
+                student += `<td>${data[i].name}</td>`;
+                student += `<td>${data[i].kor}</td>`;
+                student += `<td>${data[i].eng}</td>`;
+                student += `<td>${data[i].math}</td>`;
+                student += `<td>${sum[i]}</td>`;
+                student += `<td>${avg[i]}</td>`;
+                student += `<td><button class='updateBtn'>수정</button><button class='delBtn'>삭제</button></td></tr>`;
+              }
+              $("#tbody").html(student);
+            },
+            error: function(){
+              alert("실패");
+            }
+          }); // ajax
+        }); // dataBtn
+
+        $(document).on("click", ".delBtn", function(){
+          var delId = $(this).closest("tr").attr("id");
+          $("#" + delId).remove();
+        }); // 삭제 버튼
+      }); // 제이쿼리
+    </script>
+  </head>
+  <body>
+    <h1>게시판</h1>
+    <button id="dataBtn">데이터 가져오기</button>
+    <form>
+      <label>이름</label>
+      <input type="text" name="name"><br/>
+      <label>국어</label>
+      <input type="text" name="name" id="kor"><br/>
+      <label>영어</label>
+      <input type="text" name="name" id="eng"><br/>
+      <label>수학</label>
+      <input type="text" name="name" id="math"><br/>
+    </form>
+    <table>
+      <thead>
+        <tr>
+          <th>번호</th>
+          <th>이름</th>
+          <th>국어</th>
+          <th>영어</th>
+          <th>수학</th>
+          <th>합계</th>
+          <th>평균</th>
+          <th>삭제</th>
+        </tr>
+      </thead>
+      <tbody id="tbody">
+        <!-- <tr id="">
+          <td>1</td>
+          <td>홍길동</td>
+          <td>100</td>
+          <td>100</td>
+          <td>100</td>
+          <td>300</td>
+          <td>100</td>
+          <td><button class="delBtn">삭제</button></td>
+        </tr> -->
+      </tbody>
+    </table>
+  </body>
+</html>

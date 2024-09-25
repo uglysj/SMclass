@@ -4,9 +4,89 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <title>Document</title>
+    <title>Ajax</title>
+    <style>
+      h1{text-align: center;}
+      table, th, td{border: 1px solid black; border-collapse: collapse;}
+      table{width: 80%; margin:0 auto;}
+      th, td{width: 150px; height: 40px; text-align: center;}
+      th:nth-child(2){width: 500px;}
+      div{width: 600px; margin: 30px auto; border: 1px solid black;}
+    </style>
+    <script>
+      // 제이쿼리 선언
+      $(function(){
+        //   var board = [
+        //     { "no":1,
+        //       "title":"VP Quality Control",
+        //       "date":"2024-03-24",
+        //       "name":"Wakefield Marsie",
+        //       "hit":86 },
+        //     { "no":2,
+        //       "title":"Programmer III",
+        //       "date":"2024-04-28",
+        //       "name":"Vincent Bobasch",
+        //       "hit":20 }
+        // ];
+        //   console.log(board.no);
+        //   console.log(board.title);
+        //   console.log(board.date);
+        //   console.log(board.name);
+        //   console.log(board.hit);
+
+        // 버튼 클릭 이벤트
+        $("#dataBtn").click(function(){
+          // ajax 선언
+          $.ajax({
+            url: "js/boardData.json",
+            type: "get", // get, post
+            data: "", // 데이터를 서버로 전송
+            dataType: "json", // text, html, json, xml...
+            success: function(data){ // 서버와 송신 성공 시
+              // data : 배열 -> no
+              var no_data = "";
+
+              for(var i = 0; i < data.length; i++){
+                no_data += `<tr id='${data[i].no}'><td>${data[i].no}</td>`;
+                no_data += `<td>${data[i].title}</td>`;
+                no_data += `<td>${data[i].date}</td>`;
+                no_data += `<td>${data[i].name}</td>`;
+                no_data += `<td>${data[i].hit}</td>`;
+                no_data += `<td><button class='delBtn'>삭제</button></td></tr>`;
+              }
+
+              // tbody 안에 데이터 넣기
+              $("#tbody").html(no_data);
+
+              // div안에 글자 입력 이벤트
+              // $("#d01").text(no_data);
+            },
+            error: function(){ // 서버와 송신 실패 시
+              console.log("실패");
+              alert("실패");
+            }
+          }); // ajax
+        }); // dataBtn
+      }); // 제이쿼리 선언
+    </script>
   </head>
   <body>
-    
+    <h1>게시판</h1>
+    <button id="dataBtn">데이터 가져오기</button>
+    <table>
+      <thead>
+        <tr>
+          <th>번호</th>
+          <th>제목</th>
+          <th>날짜</th>
+          <th>작성자</th>
+          <th>조회수</th>
+          <th>삭제</th>
+        </tr>
+      </thead>
+      <tbody id="tbody">
+      </tbody>
+    </table>
+    <div id="d01"></div>
   </body>
 </html>
