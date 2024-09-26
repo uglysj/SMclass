@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <title>Ajax</title>
+    <style>
+      #wrap{width: 600px; margin: 20px auto;}
+      button{width: 80px; height: 40px;}
+      h1{text-align: center;}
+      table, th, td{border: 1px solid black; border-collapse: collapse;}
+      table{width: 80%; margin:0 auto;}
+      th, td{width: 150px; height: 40px; text-align: center;}
+      form{margin-bottom: 10px;}
+      #update, #updateCancel{display: none;}
+    </style>
+    <script>
+      let count = 1;
+      let sum = 0;
+      let avg = 0;
+      let id_num;
+     
+      $(function(){ // 제이쿼리 선언
+        $.ajax({ // ajax 선언
+          url: "js/stuData.json",
+          type: "get",
+          data: "",
+          dataType: "json",
+          success: function(data){ // 데이터 가져오기 버튼
+            var student = "";
+
+            for(var i = 0; i < data.length; i++){
+              count++; // 번호 카운팅
+  
+              sum = data[i].kor + data[i].eng + data[i].math; // 합계
+              avg = (sum / 3).toFixed(2); // 평균
+
+              student += `<tr id='${data[i].no}'><td>${data[i].no}</td>`;
+              student += `<td>${data[i].name}</td>`;
+              student += `<td>${data[i].kor}</td>`;
+              student += `<td>${data[i].eng}</td>`;
+              student += `<td>${data[i].math}</td>`;
+              student += `<td>${sum}</td>`;
+              student += `<td>${avg}</td>`;
+              student += `<td><button class='updateBtn'>수정</button><button class='delBtn'>삭제</button></td></tr>`;
+            }
+            $("#tbody").html(student);
+          },
+          error: function(){
+            alert("실패");
+          }
+        }); // ajax
+       
+        $(document).on("click", ".delBtn", function(){ // 삭제 버튼
+          var delId = $(this).closest("tr").attr("id");
+          if(confirm(`${delId}번 학생 성적을 삭제하시겠습니까?`)){
+            $("#" + delId).remove();
+            alert(`${delId}번 학생 성적이 삭제되었습니다.`);
+          }
+        }); // 삭제 버튼
+
+        $(document).on("click", "#create", function(){ // 추가 버튼
+          // input 태그에 들어있는 값 가져오기
+          let name = $("#name").val();
+          let kor = Number($("#kor").val());
+          let eng = Number($("#eng").val());
+          let math = Number($("#math").val());
+          var student = "";
+
+          // 입력된 데이터가 있는지 확인
+          if(name == "" || kor == "" || eng == "" || math == ""){
+            alert("데이터를 입력하셔야 추가가 가능합니다.");
+            return false;
+          } else alert("학생 성적을 저장합니다.");
+
+          sum = kor + eng + math;
+          avg = (sum / 3).toFixed(2);
+
+          student += `<tr id='${count}'><td>${count}</td>`;
+          student += `<td>${name}</td>`;
+          student += `<td>${kor}</td>`;
+          student += `<td>${eng}</td>`;
+          student += `<td>${math}</td>`;
+          student += `<td>${sum}</td>`;
+          student += `<td>${avg}</td>`;
+          student += `<td><button class='updateBtn'>수정</button><button class='delBtn'>삭제</button></td></tr>`;          
+
+          // 입력한 데이터 추가
+          $("#tbody").prepend(student);
+
+          // input 태그에 들어있는 데이터 지우기
+          $("#name, #kor, #eng, #math").val("");
+
+          count++;
+        }); // 추가 버튼
+
+        $(document).on("click", ".updateBtn", function(){ // 수정 버튼
+          alert("수정을 진행 합니다.");
+          $("#create, #update, #updateCancel, .updateBtn").toggle();
+          id_num = $(this).closest("tr").attr("id");
+
+          $("#name").val($("#" + id_num).children("td:eq(1)").text());
+          $("#kor").val($("#" + id_num).children("td:eq(2)").text());
+          $("#eng").val($("#" + id_num).children("td:eq(3)").text());
+          $("#math").val($("#" + id_num).children("td:eq(4)").text());
+        }); // 수정 버튼
+
+        $(document).on("click", "#update", function(){ // 수정완료 버튼
+          // input 태그에 들어있는 값 가져오기
+          let name = $("#name").val();
+          let kor = Number($("#kor").val());
+          let eng = Number($("#eng").val());
+          let math = Number($("#math").val());
+          sum = kor + eng + math;
+          avg = (sum / 3).toFixed(2);
+          
+          // 입력된 데이터가 있는지 확인
+          if(name == "" || kor == "" || eng == "" || math == ""){
+            alert("데이터를 입력하셔야 추가가 가능합니다.");
+            return false;
+          }
+
+          // 수정된 데이터 값 넣기
+          $("#" + id_num).children("td:eq(1)").text(name);
+          $("#" + id_num).children("td:eq(2)").text(kor);
+          $("#" + id_num).children("td:eq(3)").text(eng);
+          $("#" + id_num).children("td:eq(4)").text(math);
+          $("#" + id_num).children("td:eq(5)").text(sum);
+          $("#" + id_num).children("td:eq(6)").text(avg);
+
+          // input 태그에 들어있는 데이터 지우기
+          $("#name, #kor, #eng, #math").val("");
+          
+          alert("수정이 완료 되었습니다.");
+          $("#create, #update, #updateCancel, .updateBtn").toggle();
+        }); // 수정완료 버튼
+
+        $(document).on("click", "#updateCancel", function(){ // 수정취소 버튼
+          alert("수정이 취소 되었습니다.");
+          $("#create, #update, #updateCancel, .updateBtn").toggle();
+          $("#name, #kor, #eng, #math").val("");
+        }); // 수정취소 버튼
+        
+      }); // 제이쿼리
+    </script>
+  </head>
+  <body>
+    <h1>게시판</h1>
+    <div id="wrap">
+      <form>
+        <label>이름</label>
+        <input type="text" name="stu" id="name"><br/>
+        <label>국어</label>
+        <input type="text" name="stu" id="kor"><br/>
+        <label>영어</label>
+        <input type="text" name="stu" id="eng"><br/>
+        <label>수학</label>
+        <input type="text" name="stu" id="math"><br/>
+      </form>
+        <button type="button" id="create">추가</button>
+        <button type="button" id="update">수정완료</button>
+        <button type="button" id="updateCancel">수정취소</button>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>번호</th>
+          <th>이름</th>
+          <th>국어</th>
+          <th>영어</th>
+          <th>수학</th>
+          <th>합계</th>
+          <th>평균</th>
+          <th>삭제</th>
+        </tr>
+      </thead>
+      <tbody id="tbody">
+      </tbody>
+    </table>
+  </body>
+</html>
