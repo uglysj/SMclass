@@ -3,6 +3,7 @@ $(function(){ // jquery
     let surl = "https://apis.data.go.kr/B551011/PhotoGalleryService1/gallerySearchList1?serviceKey=UWVntvJMCXNFBgOb8rJ6bmTL0Vhdr66tlDa%2FUhQbhJiARcEI3XVr%2FjuTqnZ%2B%2Fj4kNwB5G1yDiny2zEiJGUttBg%3D%3D&numOfRows=10&pageNo=1&MobileOS=ETC&MobileApp=AppTest&arrange=A&_type=json&keyword=";
     let searchWord = $("#search_txt").val();
     surl += searchWord;
+    
     $.ajax({ //ajax
       url: surl,
       type: "get",
