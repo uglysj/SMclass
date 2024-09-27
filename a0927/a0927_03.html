@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <title>Document</title>
+    <script>
+      $(function(){ //jquery
+        $("#chkBtn").click(function(){ // chkBtn
+          // alert("클릭");
+          console.log("체크박스 개수 : " + $("input[name='hobby']").length);
+          console.log("체크된 개수 : " + $("input[name='hobby']:checked").length);
+          if($("input[name='hobby']:checked").length < 3){
+            alert("관심사는 3개 이상 체크 하셔야 합니다.");
+            if(confirm("모두 체크 할까요?")) $("input[name='hobby']").prop("checked", true);
+            return false;
+          }
+        }); // chkBtn
+
+        $("#all_chkBtn").click(function(){ // all_chkBtn
+          $("input[name='hobby']").prop("checked", true);
+        }); // all_chkBtn
+      }); // jquery
+    </script>
+  </head>
+  <body>
+    <form action="#" name="frm" method="post">
+      <h1>취미</h1>
+      <input type="checkbox" name="hobby" id="game" value="game">
+      <label for="game">게임</label>
+      <input type="checkbox" name="hobby" id="golf" value="golf">
+      <label for="golf">골프</label>
+      <input type="checkbox" name="hobby" id="swim" value="swim">
+      <label for="swim">수영</label>
+      <input type="checkbox" name="hobby" id="book" value="book">
+      <label for="book">독서</label>
+      <input type="checkbox" name="hobby" id="run" value="run">
+      <label for="run">조깅</label>
+      <br/><br/>
+      <button type="button" id="chkBtn">체크확인</button>
+      <button type="button" id="all_chkBtn">모두체크</button>
+    </form>
+  </body>
+</html>
