@@ -14,11 +14,15 @@ if m_len > 4:
   print("십원 :",((((((int(money) % 10000) % 5000) % 10000) % 500) % 100) % 50) // 10)
 elif m_len > 3:
   print("천원 :",int(money) // 1000)
-  print("백원 :",(int(money) % 1000) // 100)
-  print("오십원 :",((int(money) % 1000) % 100) // 50)
-  print("십원 :",(((int(money) % 1000) % 100) % 50) // 10)
+  print("오백원 :",(int(money) % 1000) // 500)
+  print("백원 :",((int(money) % 1000) % 500) // 100)
+  print("오십원 :",(((int(money) % 1000) % 500) % 100) // 50)
+  print("십원 :",((((int(money) % 1000) % 500) % 100) % 50) // 10)
 elif m_len > 2:
-  print(int(money))
+  print("오백원 :",int(money) // 500)
+  print("백원 :",(int(money) % 500) // 100)
+  print("오십원 :",((int(money) % 500) % 100) // 50)
+  print("십원 :",(((int(money) % 500) % 100) % 50) // 10)
 else:
   print(int(money))
 
