@@ -1,0 +1,22 @@
+1. join02_info_input.html 위에 부분은 있던거 사용하고 내용 부분 만들기
+
+2. 학생성적프로그램 딕셔너리 형태로 바꿔서 만들기
+
+3. 숫자맞추기게임 구현
+
+[ 과제 ]
+1. html 코딩
+html_class 폴더 > a_html > notice_list.html / write.html / notice_read.html 참조
+(상단부분 그대로 사용)
+html_class 폴더 > htmlSample > join02_info_input.html 
+구현해서 제출
+
+2. students 파이썬 구현
+b1004 > 학생성적프로그램.py 에서
+타입 -> dict타입으로 변경해서
+구현하시오.
+
+3. 숫자맞추기 게임
+구현해서 제출하시오.
+b1002 > b1002_14.py
+* 자신이 입력한 숫자를 리스트 저장해서 출력
