@@ -8,47 +8,6 @@
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <title>회원가입 - 회원정보입력</title>
-    <style>
-      .join_step_div{width: 1000px; height: 100px; margin: 0 auto;}
-      .join_step_div ul{width: 1000px; display: flex;}
-      .join_step_div ul li{width: 330px; box-sizing: border-box; padding: 20px 0; margin: 0px 1px;}
-      .join_step_div ul li:nth-child(2){background: #8b8075; color: #fff}
-      .join_step_div ul li span{font-size: 12px; font-weight: 700; display: block; padding: 10px 0 7px 0;}
-      .join_step_div ul li p{font-size: 20px; font-weight: 700;}
-      h4{width: 1000px; height: 36px; color: #333; font-size: 20px; font-weight: 600; box-sizing: border-box; padding: 0 0 10px 10px; text-align: left; margin: 20px auto 0;}
-      h4 span{font-size: 13px; color: #555; font-weight: 600;}
-      #mem_form{width: 1000px; height: 1809px; font-size: 14px; margin:0 auto 15px;}
-      #mem_form table{width: 1000px; margin: 0 auto; border-top: 1px solid rgb(209, 209, 209); border-bottom: none;}
-      #mem_form table th{width: 200px; box-sizing: border-box; border-bottom: 1px solid rgb(230, 230, 230); background: rgb(246, 246, 246); text-align: left;}
-      #mem_form table th div{display: inline-block; width: 10px; height: 10px; background: url(images/point_rs.png) no-repeat 45% 88%; position: relative; left: 20px;}
-      #mem_form table th label{font-size: 13px; font-weight: 700; padding-left: 25px;}
-      #mem_form table td{width: 800px; box-sizing: border-box; background: #fff; padding: 10px 20px; border-bottom: 1px solid rgb(230, 230, 230);}
-      #mem_form table td span{font-size: 13px; font-weight: 700; color: #555; line-height: 20px; margin-left: 3px;}
-      #mem_form table td span.mem_id_span{display: block; margin-top: 5px;}
-      #mem_form table td span.mem_pwd_span{display: block; margin-top: 2px;}
-      #mem_form table td input[type="text"]{width: 276px; height: 26px;}
-      #mem_form table td input[type="password"]{width: 276px; height: 26px;}
-      #mem_form table td input[type="button"]{width: 80px; height: 30px; background: #6f6f6f; padding: 0 10px; border: none; color: #fff; font-size: 12px; font-weight: 700;}
-      #mem_form table .mem_mail_tr td input[id="mail_id"]{width: 130px;}
-      #mem_form table .mem_mail_tr td input[id="mail_tail"]{width: 160px;}
-      #mem_form table .mem_mail_tr td select{width: 150px; height: 25px; font-size: 13px; color: #666;}
-      #mem_form table .mem_address_tr td input[id="postal"]{width: 160px; height: 30px;}
-      #mem_form table .mem_address_tr td input[id="address1"], #mem_form table .mem_address_tr td input[id="address2"]{width: 755px; height: 30px; margin-top: 5px;}
-      #mem_form table .mem_tel_tr td input[type="text"]{width: 75px; text-align: center;}
-      #mem_form table .mem_birth_tr td select{width: 80px; height: 30px;}
-      #mem_form table .mem_birth_tr td span{margin-left: 0; margin-right: 10px;}
-      #mem_form table .mem_birth_tr td div{width: 150px; height: 20px; margin-top: 10px;}
-      #mem_form table .mem_birth_tr td label{font-size: 13px; font-weight: 600; color: #555;}
-      #mem_form table td input[type="radio"], #mem_form table td input[type="checkbox"]{display: none;}
-      #mem_form table td input[type="radio"]+label, #mem_form table td input[type="checkbox"]+label{width: 24px; height: 24px; padding-left: 24px; margin-right: 5px; background: url(images/radio_off.jpg) no-repeat 0 2px;}
-      #mem_form table td input[type="radio"]:checked+label, #mem_form table td input[type="checkbox"]:checked+label{background: url(images/radio_on.jpg) no-repeat 0 2px;}
-      #mem_form table .mem_gender_tr td label{font-size: 13px; font-weight: 600; color: #555;}
-      #mem_form table select[id="job"]{width: 274px; height: 30px;}
-      #mem_form .mem_hobby_tr ul{display: flex; flex-wrap: wrap;}
-      #mem_form .mem_hobby_tr ul li{width: 126px; margin: 5px 0}
-      #mem_form button{width: 100px; height: 55px; color: rgb(85, 85, 85); font-size: 15px; font-weight: 700; margin: 15px 10px 0 0; background: #fff; border: 1px solid rgb(221, 221, 221);}
-      #mem_form button[type="submit"]{color: white; background: rgb(138, 141, 143);}
-    </style>
   </head>
   <body>
     <header>
@@ -387,9 +346,55 @@
             </td>
           </tr>
         </table>
-        <button type="reset">취소하기</button>
-        <button type="submit">가입하기</button>
+        <div id="mem_button_div">
+          <button type="reset">취소하기</button>
+          <button type="submit">가입하기</button>
+        </div>
       </form>
     </section>
+
+     <!-- footer 부분 -->
+     <footer>
+      <div class="footer">
+        <div class="ftnavi">
+          <ul>
+            <li><a href="#">회사소개</a></li>
+            <li><a href="#">오시는길</a></li>
+            <li><a href="#">개인정보처리방침</a></li>
+            <li><a href="#">영상정보처리기기운영관리방침</a></li>
+            <li><a href="#">이용약관</a></li>
+            <li><a href="#">이메일무단수집거부</a></li>
+          </ul>
+          <div class="addr">
+            <p class="add">포레스트 리솜<span>|</span>충청북도 제천시 백운면 금봉로 365</p>
+            <p class="tel">
+              대표번호 : 043-649-6000<span></span>
+              예약문의 : 1600-0060<span></span>
+              단체문의 : 02-6177-5999<span></span>
+              분양문의 : 02-567-5555<span></span>
+              통신판매업신고 : 2011-충북제천-0016호
+            </p>
+            <p class="info">메리츠화재와 개인정보 배상책임보험 계약을 체결하여 회원 개인정보를 보호하고 있습니다.</p>
+            <p class="copy">COPYRIGHT(C) HOBAN HOTEL & RESORT. ALL RIGHTS RESERVED.</p>
+          </div>
+        </div>
+        <div class="right">
+          <div class="sns">
+            <a href="#"><img src="images/insta_btn_fnew.png"></a>
+            <a href="#"><img src="images/youtube_btn_fnew.png"></a>
+            <a href="#"><img src="images/facebook_btn_fnew.png"></a>
+            <a href="#"><img src="images/kakao_ch_btn_fnew.png"></a>
+          </div>
+          <div class="group">
+            <select name="site_go" id="site_go" class="sel_box">
+              <option value="#">패밀리사이트</option>
+              <option value="https://www.ihoban.co.kr/web">호반건설</option>
+              <option value="https://www.hobanapt.co.kr/web">호반베르디움</option>
+            </select>
+            <button type="button">GO</button>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

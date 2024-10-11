@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/forest_style.css">
+    <link rel="stylesheet" type="text/css" href="css/board.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <title>관리자 글쓰기</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <a href="#"><img src="images/img_logo_re_forest.png"></a>
+        </div>
+        <div class="nav_wrap">
+          <div class="quick_menu">
+            <ul>
+              <li><a href="#">회원예약</a></li>
+              <li><a href="#">패키지 예약</a></li>
+              <li><a href="#">부대시설 예약</a></li>
+              <li><a href="#">회원가입</a></li>
+              <li><a href="#">로그인</a></li>
+            </ul>
+          </div>
+          <script>
+            function m_over(){
+              document.querySelector(".navibg").style.display='block';
+            }
+            function m_leave(){
+              document.querySelector(".navibg").style.display='none';
+            }
+          </script>
+          <div class="menu" onmouseover="m_over()" onmouseleave="m_leave()">
+            <ul>
+              <li><a href="#">포레스트</a></li>
+              <li><a href="#">스파&찜질방</a></li>
+              <li><a href="#">객실</a></li>
+              <li><a href="#">특별한 경험</a></li>
+              <li><a href="#">세미나 & 연회</a></li>
+              <li><a href="#">브랜드소개</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- admin write 부분 -->
+    <section id="write_sec">
+      <h1>관리자 글쓰기</h1>
+      <form action="#" name="write_frm" method="post">
+        <table>
+          <tr>
+            <th>분류</th>
+            <td>
+              <select name="category" id="category">
+                <option value="notice">공지</option>
+                <option value="event">이벤트</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <th>제목</th>
+            <td>
+              <input type="text" name="title" id="title">
+            </td>
+          </tr>
+          <tr>
+            <th>내용</th>
+            <td>
+              <textarea name="content" id="content" cols="50" rows="10"></textarea>
+            </td>
+          </tr>
+          <tr>
+            <th>이미지 표시</th>
+            <td>
+              <input type="file" name="file" id="file">
+            </td>
+          </tr>
+        </table>
+        <button type="submit">작성완료</button>
+        <button type="reset">취소</button>
+      </form>
+    </section>
+
+     <!-- footer 부분 -->
+     <footer>
+      <div class="footer">
+        <div class="ftnavi">
+          <ul>
+            <li><a href="#">회사소개</a></li>
+            <li><a href="#">오시는길</a></li>
+            <li><a href="#">개인정보처리방침</a></li>
+            <li><a href="#">영상정보처리기기운영관리방침</a></li>
+            <li><a href="#">이용약관</a></li>
+            <li><a href="#">이메일무단수집거부</a></li>
+          </ul>
+          <div class="addr">
+            <p class="add">포레스트 리솜<span>|</span>충청북도 제천시 백운면 금봉로 365</p>
+            <p class="tel">
+              대표번호 : 043-649-6000<span></span>
+              예약문의 : 1600-0060<span></span>
+              단체문의 : 02-6177-5999<span></span>
+              분양문의 : 02-567-5555<span></span>
+              통신판매업신고 : 2011-충북제천-0016호
+            </p>
+            <p class="info">메리츠화재와 개인정보 배상책임보험 계약을 체결하여 회원 개인정보를 보호하고 있습니다.</p>
+            <p class="copy">COPYRIGHT(C) HOBAN HOTEL & RESORT. ALL RIGHTS RESERVED.</p>
+          </div>
+        </div>
+        <div class="right">
+          <div class="sns">
+            <a href="#"><img src="images/insta_btn_fnew.png"></a>
+            <a href="#"><img src="images/youtube_btn_fnew.png"></a>
+            <a href="#"><img src="images/facebook_btn_fnew.png"></a>
+            <a href="#"><img src="images/kakao_ch_btn_fnew.png"></a>
+          </div>
+          <div class="group">
+            <select name="site_go" id="site_go" class="sel_box">
+              <option value="#">패밀리사이트</option>
+              <option value="https://www.ihoban.co.kr/web">호반건설</option>
+              <option value="https://www.hobanapt.co.kr/web">호반베르디움</option>
+            </select>
+            <button type="button">GO</button>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
