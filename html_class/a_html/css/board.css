@@ -1,14 +1,14 @@
 .sub_banner{width: 100%; height: 320px; background: url('../images/bg_topBg1_2.jpg') no-repeat;}
 
 /* NOTICE 부분 */
-section{ width: 1200px; height: 850px; margin: 25px auto 0; text-align: center; }
-section .sub_naviloc{font-size: 12px; font-weight: 500; color: #777; text-align: right;}
-section h1{ text-align: center; font-size: 40px; font-weight: 700; margin: 30px 0; }
-section table, th, td{ border-collapse: collapse; }
-section th, td{ height: 42px; border-bottom: 1px solid silver; }
-section th{ font-size: 16px; font-weight: 700; border-bottom: 2px solid black; background: #f3f3f3; }
-section table{ width: 1200px; margin: 0 auto; border-top: 2px solid black; border-bottom: 2px solid black; text-align: center; }
-section td:nth-child(2){ text-align: left; padding-left: 10px; }
+#notice_sec{ width: 1200px; height: 850px; margin: 25px auto 0; text-align: center; }
+#notice_sec .sub_naviloc{font-size: 12px; font-weight: 500; color: #777; text-align: right;}
+#notice_sec h1{ text-align: center; font-size: 40px; font-weight: 700; margin: 30px 0; }
+#notice_sec table, th, td{ border-collapse: collapse; }
+#notice_sec th, td{ height: 42px; border-bottom: 1px solid silver; }
+#notice_sec th{ font-size: 16px; font-weight: 700; border-bottom: 2px solid black; background: #f3f3f3; }
+#notice_sec table{ width: 1200px; margin: 0 auto; border-top: 2px solid black; border-bottom: 2px solid black; text-align: center; }
+#notice_sec td:nth-child(2){ text-align: left; padding-left: 10px; }
 .wrapper{ width: 380px; height: 40px; margin: 0 auto 30px; }
 .wrapper select{ width: 80px; height: 40px; border: 1px solid #666; background: url('../images/search-box-select.png') no-repeat 90%;
 appearance: none; padding: 5px; box-sizing: border-box; position: relative; top: -2px; }
