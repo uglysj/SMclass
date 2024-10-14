@@ -1,14 +1,14 @@
-.sub_banner{width: 100%; height: 320px; background: url('../images/bg_topBg1_2.jpg') no-repeat;}
+.sub_banner{width: 100%; height: 320px; background: url('../images/bg_topBg1_2.jpg') no-repeat; background-size: cover;}
+.sub_naviloc{font-size: 12px; font-weight: 500; color: #777; text-align: right;}
 
 /* NOTICE 부분 */
-section{ width: 1200px; height: 850px; margin: 25px auto 0; text-align: center; }
-section .sub_naviloc{font-size: 12px; font-weight: 500; color: #777; text-align: right;}
-section h1{ text-align: center; font-size: 40px; font-weight: 700; margin: 30px 0; }
-section table, th, td{ border-collapse: collapse; }
-section th, td{ height: 42px; border-bottom: 1px solid silver; }
-section th{ font-size: 16px; font-weight: 700; border-bottom: 2px solid black; background: #f3f3f3; }
-section table{ width: 1200px; margin: 0 auto; border-top: 2px solid black; border-bottom: 2px solid black; text-align: center; }
-section td:nth-child(2){ text-align: left; padding-left: 10px; }
+#notice_sec{ width: 1200px; height: 1900px; margin: 25px auto 0; text-align: center; }
+#notice_sec h1{ text-align: center; font-size: 40px; font-weight: 700; margin: 30px 0; }
+#notice_sec table, #notice_sec th, #notice_sec td{ border-collapse: collapse; }
+#notice_sec th, #notice_sec td{ height: 42px; border-bottom: 1px solid silver; }
+#notice_sec th{ font-size: 16px; font-weight: 700; border-bottom: 2px solid black; background: #f3f3f3; }
+#notice_sec table{ width: 1200px; margin: 0 auto; border-top: 2px solid black; border-bottom: 2px solid black; text-align: center; }
+#notice_sec td:nth-child(2){ text-align: left; padding-left: 10px; }
 .wrapper{ width: 380px; height: 40px; margin: 0 auto 30px; }
 .wrapper select{ width: 80px; height: 40px; border: 1px solid #666; background: url('../images/search-box-select.png') no-repeat 90%;
 appearance: none; padding: 5px; box-sizing: border-box; position: relative; top: -2px; }
@@ -80,3 +80,76 @@ font-weight: 600; background: white; border: 2px solid #ccc; line-height: 50px;}
 .sign-up-info .sign-up .arrow{width: 18px; height: 18px; display: inline-block;
 background: url('../images/ico_set.png') -635px 0 no-repeat; background-size: 800px 800px;
 position: relative; top: 16px;}
+
+/* 회원가입 - 회원정보 부분 */
+#mem_section{width: 1000px; margin:0 auto; padding-top: 38px;}
+#mem_section table, #mem_section th, #mem_section td{border-collapse: collapse;}
+#mem_section h1{font-size: 40px; font-weight: 700; color: #333; text-align: center; margin-top: 40px; margin-bottom: 35px;}
+.join_step_div{width: 1000px; height: 100px; margin: 0 auto;}
+.join_step_div ul{width: 1000px; display: flex;}
+.join_step_div ul li{width: 330px; box-sizing: border-box; padding: 20px 0; margin: 0px 1px; text-align: center;}
+.join_step_div ul li:nth-child(2){background: #8b8075; color: #fff}
+.join_step_div ul li span{font-size: 12px; font-weight: 700; display: block; padding: 10px 0 7px 0;}
+.join_step_div ul li p{font-size: 20px; font-weight: 700;}
+h4{width: 1000px; height: 36px; color: #333; font-size: 20px; font-weight: 600; box-sizing: border-box; padding: 0 0 10px 10px; text-align: left; margin: 20px auto 0;}
+h4 span{font-size: 13px; color: #555; font-weight: 600;}
+#mem_form{width: 1000px; font-size: 14px; margin:0 auto 15px;}
+#mem_form table{width: 1000px; margin: 0 auto; border-top: 1px solid rgb(209, 209, 209); border-bottom: none;}
+#mem_form table th{width: 200px; box-sizing: border-box; border-bottom: 1px solid rgb(230, 230, 230); background: rgb(246, 246, 246); text-align: left;}
+#mem_form table th div{display: inline-block; width: 10px; height: 10px; background: url(../images/point_rs.png) no-repeat 45% 88%; position: relative; left: 20px;}
+#mem_form table th label{font-size: 13px; font-weight: 700; padding-left: 25px;}
+#mem_form table td{width: 800px; box-sizing: border-box; background: #fff; padding: 10px 20px; border-bottom: 1px solid rgb(230, 230, 230);}
+#mem_form table td span{font-size: 13px; font-weight: 700; color: #555; line-height: 20px; margin-left: 3px;}
+#mem_form table td span.mem_id_span{display: block; margin-top: 5px;}
+#mem_form table td span.mem_pwd_span{display: block; margin-top: 2px;}
+#mem_form table td input[type="text"]{width: 276px; height: 26px;}
+#mem_form table td input[type="password"]{width: 276px; height: 26px;}
+#mem_form table td input[type="button"]{width: 80px; height: 30px; background: #6f6f6f; padding: 0 10px; border: none; color: #fff; font-size: 12px; font-weight: 700;}
+#mem_form table .mem_mail_tr td input[id="mail_id"]{width: 130px;}
+#mem_form table .mem_mail_tr td input[id="mail_tail"]{width: 160px;}
+#mem_form table .mem_mail_tr td select{width: 150px; height: 25px; font-size: 13px; color: #666;}
+#mem_form table .mem_mail_tr td span{font-size: 15px;}
+#mem_form table .mem_address_tr td input[id="postal"]{width: 160px; height: 30px;}
+#mem_form table .mem_address_tr td input[id="address1"], #mem_form table .mem_address_tr td input[id="address2"]{width: 755px; height: 30px; margin-top: 5px;}
+#mem_form table .mem_tel_tr td input[type="text"]{width: 75px; text-align: center;}
+#mem_form table .mem_birth_tr td select{width: 80px; height: 30px;}
+#mem_form table .mem_birth_tr td span{margin-left: 0; margin-right: 10px;}
+#mem_form table .mem_birth_tr td div{width: 150px; height: 20px; margin-top: 10px;}
+#mem_form table .mem_birth_tr td label{font-size: 13px; font-weight: 600; color: #555;}
+#mem_form table td input[type="radio"], #mem_form table td input[type="checkbox"]{display: none;}
+#mem_form table td input[type="radio"]+label, #mem_form table td input[type="checkbox"]+label{width: 24px; height: 24px; padding-left: 24px; margin-right: 5px; background: url(../images/radio_off.jpg) no-repeat 0 2px;}
+#mem_form table td input[type="radio"]:checked+label, #mem_form table td input[type="checkbox"]:checked+label{background: url(../images/radio_on.jpg) no-repeat 0 2px;}
+#mem_form table .mem_gender_tr td label{font-size: 13px; font-weight: 600; color: #555;}
+#mem_form table select[id="job"]{width: 274px; height: 30px;}
+#mem_form .mem_hobby_tr ul{display: flex; flex-wrap: wrap;}
+#mem_form .mem_hobby_tr ul li{width: 126px; margin: 5px 0}
+#mem_form button{width: 100px; height: 55px; color: rgb(85, 85, 85); font-size: 15px; font-weight: 700; margin: 15px 10px 0 0; background: #fff; border: 1px solid rgb(221, 221, 221);}
+#mem_form button[type="submit"]{color: white; background: rgb(138, 141, 143);}
+#mem_form #mem_button_div{text-align: center;}
+
+/* 관리자 글쓰기 부분 */
+#write_sec{width: 90%; margin: 0 auto;}
+#write_sec h1{font-size: 32px; font-weight: 700; text-align: center; box-sizing: border-box; padding-top: 50px; margin-bottom: 40px;}
+#write_sec form{text-align: center;}
+#write_sec table{width: 100%; border-top: 3px solid black; border-bottom: 3px solid black; padding-top: 20px;}
+#write_sec th{width: 15%; font-size: 20px;}
+#write_sec td{width: 85%; height: 50px; border: none;}
+#write_sec td select{width: 100%; border: 2px solid #ccc; padding: 5px 0 5px 10px; appearance: none; background: url(images/search-box-select.png) no-repeat 98% 50%; font-size: 16px;}
+#write_sec td input{width: 100%; height: 35px; font-size: 16px; border: 2px solid #ccc; box-sizing: border-box;}
+#write_sec td textarea{resize: none; width: 100%; border: 2px solid #ccc; box-sizing: border-box; font-size: 16px;}
+#write_sec td input[type="file"]{border: none; padding-top: 5px;}
+#write_sec form button{width: 130px; height: 45px; font-size: 18px; margin-top: 50px;}
+#write_sec form button[type="submit"]{color: white; background: #3d3d3d; border: none; margin-right: 15px;}
+#write_sec form button[type="reset"]{background: white; border: 2px solid #3d3d3d;}
+
+/* notice_read 부분 */
+#read_sec{padding-top: 50px; font-size: 16px;}
+#read_sec h1{font-size: 40px; font-weight: 700; text-align: center; margin-bottom: 70px;}
+#read_sec table{width: 96%; margin: 0 auto; border-top: 2px solid black; line-height: 40px;}
+#read_sec table th{font-weight: 600; text-align: left; padding: 10px 0 10px 20px; border-bottom: 1px solid silver;}
+#read_sec table td{padding: 5px 0 5px 20px; border-bottom: 1px solid silver;}
+#read_sec table td img{margin: 15px 0 15px 0; width: 80%;}
+#read_sec table td strong{font-weight: 600;}
+#read_sec .separator{padding: 0 20px; color: #e0e0e0;}
+#read_sec .list_option{text-align: right; width: 96%; margin: 30px auto 10px;}
+#read_sec .list_option a{display: inline-block; width: 120px; height: 50px; line-height: 50px; border: 2px solid black; text-align: center; margin-left: 15px;}

@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/forest_style.css">
+    <link rel="stylesheet" type="text/css" href="css/board.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <title>회원가입 - 회원정보입력</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <a href="#"><img src="images/img_logo_re_forest.png"></a>
+        </div>
+        <div class="nav_wrap">
+          <div class="quick_menu">
+            <ul>
+              <li><a href="#">회원예약</a></li>
+              <li><a href="#">패키지 예약</a></li>
+              <li><a href="#">부대시설 예약</a></li>
+              <li><a href="#">회원가입</a></li>
+              <li><a href="#">로그인</a></li>
+            </ul>
+          </div>
+          <script>
+            function m_over(){
+              document.querySelector(".navibg").style.display='block';
+            }
+            function m_leave(){
+              document.querySelector(".navibg").style.display='none';
+            }
+          </script>
+          <div class="menu" onmouseover="m_over()" onmouseleave="m_leave()">
+            <ul>
+              <li><a href="#">포레스트</a></li>
+              <li><a href="#">스파&찜질방</a></li>
+              <li><a href="#">객실</a></li>
+              <li><a href="#">특별한 경험</a></li>
+              <li><a href="#">세미나 & 연회</a></li>
+              <li><a href="#">브랜드소개</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- * 하부메뉴부분 들어감 -->
+    <div class="navibg"></div>
+    <!-- 서브페이지 배너 부분 -->
+    <div class="sub_banner"></div>
+
+    <!-- 회원가입 입력폼 부분 -->
+    <section id="mem_section">
+      <div class="sub_naviloc">HOME <i class="fa-solid fa-angle-right"></i> 회원가입 <i class="fa-solid fa-angle-right"></i> 회원정보입력</div>
+      <h1>회원가입</h1>
+      <div class="join_step_div">
+        <ul>
+          <li>
+            <span>STEP.1</span>
+            <p>약관동의</p>
+          </li>
+          <li>
+            <span>STEP.2</span>
+            <p>회원정보</p>
+          </li>
+          <li>
+            <span>STEP.3</span>
+            <p>회원가입완료</p>
+          </li>
+        </ul>
+      </div>
+      <form action="#" name="frm" method="post" id="mem_form">
+        <h4>필수 정보 입력 <span>(* 항목은 필수 항목입니다.)</span></h4>
+        <table>
+          <tr>
+            <th><div></div><label>이름</label></th>
+            <td><input type="text" name="name" id="name"></td>
+          </tr>
+          <tr>
+            <th><div></div><label>아이디</label></th>
+            <td>
+              <input type="text" name="id" id="id">
+              <input type="button" value="중복확인"><br/>
+              <span class="mem_id_span">
+                4~16자리의 영문, 숫자, 특수기호(_)만 사용하실 수 있습니다. <br/>
+                첫 글자는 영문으로 입력해 주세요.
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <th><div></div><label>비밀번호</label></th>
+            <td>
+              <input type="password" name="pwd" id="pwd"><br/>
+              <span class="mem_pwd_span">
+                영문, 숫자, 특수문자 중 2종류 조합 시 10자리 이상 입력 <br/>
+                영문, 숫자, 특수문자 모두 조합 시 8자리 이상 입력
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <th><div></div><label>비밀번호 확인</label></th>
+            <td>
+              <input type="password" name="cPwd" id="cPwd">
+              <span>비밀번호를 다시 한번 입력해 주세요.</span>
+            </td>
+          </tr>
+          <tr class="mem_mail_tr">
+            <th><div></div><label>이메일</label></th>
+            <td>
+              <input type="text" name="mail_id" id="mail_id">
+              <span>@</span>
+              <input type="text" name="mail_tail" id="mail_tail">
+              <select>
+                <option selected>직접입력</option>
+                <option value="gmail">지메일</option>
+                <option value="naver">네이버</option>
+                <option value="nate">네이트</option>
+                <option value="daum">다음</option>
+              </select>
+            </td>
+          </tr>
+          <tr class="mem_address_tr">
+            <th><div></div><label>주소</label></th>
+            <td>
+              <input type="text" name="postal" id="postal">
+              <input type="button" value="우편번호"><br/>
+              <input type="text" name="address1" id="address1"><br/>
+              <input type="text" name="address2" id="address2">
+            </td>
+          </tr>
+          <tr class="mem_tel_tr">
+            <th><div></div><label>휴대전화</label></th>
+            <td>
+              <input type="text" name="f_tel" id="f_tel" maxlength="3"> - 
+              <input type="text" name="m_tel" id="m_tel" maxlength="4"> - 
+              <input type="text" name="l_tal" id="l_tel" maxlength="4">
+            </td>
+          </tr>
+          <tr class="mem_birth_tr">
+            <th><div></div><label>생년월일</label></th>
+            <td>
+              <select name="birth_year" id="birth_year">
+                <option selected>선택</option>
+                <option value="1988">1988</option>
+                <option value="1989">1989</option>
+                <option value="1990">1990</option>
+                <option value="1991">1991</option>
+                <option value="1992">1992</option>
+                <option value="1993">1993</option>
+                <option value="1994">1994</option>
+                <option value="1995">1995</option>
+                <option value="1996">1996</option>
+                <option value="1997">1997</option>
+                <option value="1998">1998</option>
+                <option value="1999">1999</option>
+                <option value="2000">2000</option>
+              </select>
+              <span>년</span>
+              <select name="birth_month" id="birth_month">
+                <option selected>선택</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+              </select>
+              <span>월</span>
+              <select name="birth_day" id="birth_day">
+                <option selected>선택</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option value="26">26</option>
+                <option value="27">27</option>
+                <option value="28">28</option>
+                <option value="29">29</option>
+                <option value="30">30</option>
+                <option value="31">31</option>
+              </select>
+              <span>일</span><br/>
+              <div>
+                <input type="radio" name="calendar" id="lunar" value="lunar" checked>
+                <label for="lunar">양력</label>
+                <input type="radio" name="calendar" id="solar" value="solar">
+                <label for="solar">음력</label>
+              </div>
+            </td>
+          </tr>
+          <tr class="mem_gender_tr">
+            <th><div></div><label>성별</label></th>
+            <td>
+              <input type="radio" name="gender" id="male" value="male">
+              <label for="male">남성</label>
+              <input type="radio" name="gender" id="female" value="female">
+              <label for="female">여성</label>
+            </td>
+          </tr>
+          <tr>
+            <th><div></div><label>뉴스레터 수신여부</label></th>
+            <td>
+              <span>이메일을 통한 상품 및 이벤트 정보 수신에 동의합니다.</span>
+              <input type="radio" name="newsletter" id="newsletter_y" value="yes">
+              <label for="newsletter_y">예</label>
+              <input type="radio" name="newsletter" id="newsletter_n" value="no">
+              <label for="newsletter_n">아니오</label>
+            </td>
+          </tr>
+          <tr>
+            <th><div></div><label>SMS 수신여부</label></th>
+            <td>
+              <span>이메일을 통한 상품 및 이벤트 정보 수신에 동의합니다.</span>
+              <input type="radio" name="sms" id="sms_y" value="yes">
+              <label for="sms_y">예</label>
+              <input type="radio" name="sms" id="sms_n" value="no">
+              <label for="sms_n">아니오</label>
+            </td>
+          </tr>
+        </table>
+        <h4>분양 회원 정보 입력 <span>(다구좌 회원일 경우 가지고 계신 카드번호 중 하나를 입력해 주시면 됩니다.)</span></h4>
+        <table>
+          <tr>
+            <th><label>회원번호</label></th>
+            <td>
+              <input type="text" name="m_number" id="m_number">
+              <span>하이픈(-)이나 띄어쓰기 없이 입력해 주시기 바랍니다.</span>
+            </td>
+          </tr>
+          <tr>
+            <th><label>회원인증번호</label></th>
+            <td>
+              <input type="text" name="v_number" id="v_number">
+              <span>숫자 4자리 입력</span>
+            </td>
+          </tr>
+        </table>
+        <h4>선택 입력 정보</h4>
+        <table>
+          <tr>
+            <th><label>직업</label></th>
+            <td>
+              <select name="job" id="job">
+                <option selected>선택</option>
+                <option value="worker">회사원</option>
+                <option value="self">자영업자</option>
+                <option value="freelancer">프리랜서</option>
+                <option value="housewife">전업주부</option>
+                <option value="student">학생</option>
+                <option value="etc">기타</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <th><label>결혼여부</label></th>
+            <td>
+              <input type="radio" name="marital_status" id="marital_status_y" value="yes">
+              <label for="marital_status_y">예</label>
+              <input type="radio" name="marital_status" id="marital_status_n" value="no">
+              <label for="marital_status_n">아니오</label>
+            </td>
+          </tr>
+          <tr class="mem_hobby_tr">
+            <th><label>관심사</label></th>
+            <td>
+              <ul>
+                <li>
+                  <input type="checkbox" name="hobby" id="computer" value="computer">
+                  <label for="computer">컴퓨터/인터넷</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="hobby" id="movie" value="movie">
+                  <label for="movie">영화/비디오</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="hobby" id="music" value="music">
+                  <label for="music">음악</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="hobby" id="shopping" value="shopping">
+                  <label for="shopping">쇼핑</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="hobby" id="game" value="game">
+                  <label for="game">게임</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="hobby" id="culture" value="culture">
+                  <label for="culture">문화/예술</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="hobby" id="parenting" value="parenting">
+                  <label for="parenting">육아/아동</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="hobby" id="cook" value="cook">
+                  <label for="cook">요리</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="hobby" id="interier" value="interier">
+                  <label for="interier">인테리어</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="hobby" id="leisure" value="leisure">
+                  <label for="leisure">레저/여가</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="hobby" id="health" value="health">
+                  <label for="health">건강/다이어트</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="hobby" id="fashion" value="fashion">
+                  <label for="fashion">패션/미용</label>
+                </li>
+              </ul>
+            </td>
+          </tr>
+        </table>
+        <div id="mem_button_div">
+          <button type="reset">취소하기</button>
+          <button type="submit">가입하기</button>
+        </div>
+      </form>
+    </section>
+
+     <!-- footer 부분 -->
+     <footer>
+      <div class="footer">
+        <div class="ftnavi">
+          <ul>
+            <li><a href="#">회사소개</a></li>
+            <li><a href="#">오시는길</a></li>
+            <li><a href="#">개인정보처리방침</a></li>
+            <li><a href="#">영상정보처리기기운영관리방침</a></li>
+            <li><a href="#">이용약관</a></li>
+            <li><a href="#">이메일무단수집거부</a></li>
+          </ul>
+          <div class="addr">
+            <p class="add">포레스트 리솜<span>|</span>충청북도 제천시 백운면 금봉로 365</p>
+            <p class="tel">
+              대표번호 : 043-649-6000<span></span>
+              예약문의 : 1600-0060<span></span>
+              단체문의 : 02-6177-5999<span></span>
+              분양문의 : 02-567-5555<span></span>
+              통신판매업신고 : 2011-충북제천-0016호
+            </p>
+            <p class="info">메리츠화재와 개인정보 배상책임보험 계약을 체결하여 회원 개인정보를 보호하고 있습니다.</p>
+            <p class="copy">COPYRIGHT(C) HOBAN HOTEL & RESORT. ALL RIGHTS RESERVED.</p>
+          </div>
+        </div>
+        <div class="right">
+          <div class="sns">
+            <a href="#"><img src="images/insta_btn_fnew.png"></a>
+            <a href="#"><img src="images/youtube_btn_fnew.png"></a>
+            <a href="#"><img src="images/facebook_btn_fnew.png"></a>
+            <a href="#"><img src="images/kakao_ch_btn_fnew.png"></a>
+          </div>
+          <div class="group">
+            <select name="site_go" id="site_go" class="sel_box">
+              <option value="#">패밀리사이트</option>
+              <option value="https://www.ihoban.co.kr/web">호반건설</option>
+              <option value="https://www.hobanapt.co.kr/web">호반베르디움</option>
+            </select>
+            <button type="button">GO</button>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
