@@ -1,10 +1,17 @@
-students = [
-  {'no': 1, 'name': "홍길동", 'kor': 100, 'eng': 100, 'math': 99, 'total': 299, 'avg': 99.67, 'rank': 0},
-  {'no': 2, 'name': "유관순", 'kor': 80, 'eng': 80, 'math': 85, 'total': 245, 'avg': 81.67, 'rank': 0},
-  {'no': 3, 'name': "이순신", 'kor': 90, 'eng': 90, 'math': 91, 'total': 271, 'avg': 90.33, 'rank': 0},
-  {'no': 4, 'name': "강감찬", 'kor': 60, 'eng': 65, 'math': 67, 'total': 192, 'avg': 64.00, 'rank': 0},
-  {'no': 5, 'name': "김구", 'kor': 100, 'eng': 100, 'math': 84, 'total': 284, 'avg': 94.67, 'rank': 0}
-]
+students = []
+stu_title = ['no', 'name', 'kor', 'eng', 'math', 'total', 'avg', 'rank']
+# students.txt 파일 읽기
+f = open('students.txt', 'r', encoding='UTF-8')
+while True:
+  line = f.readline()
+  if not line: break
+  s = line.strip().split(',')
+  for i in range(len(s)):
+    if i == 1: continue
+    elif i == 6: s[i] = float(s[i])
+    else: s[i] = int(s[i])
+  students.append(dict(zip(stu_title, s)))
+f.close()
 stuNo = len(students) # 학생번호 생성 / 리스트에 학생이 있으면, 그 인원으로 변경
 choice = "" # 원하는 번호 입력 변수
 
@@ -31,7 +38,7 @@ def title_program():
   return choice
 # -----------------------------------------------------
 # 학생성적입력함수 선언 - 일반변수 변경
-def stu_input(stuNo, students):
+def stu_input(stuNo):
   print("[ 학생성적입력 ]\n")
   while True:
     # 학생성적 직접 입력
@@ -47,9 +54,15 @@ def stu_input(stuNo, students):
     avg = total / 3
     rank = 0
 
-    ss = {'no': no, 'name': name, 'kor': kor, 'eng': eng, 'math': math, 'total': total, 'avg': avg, 'rank': rank}
-    students.append(ss)
+    # ss = {'no': no, 'name': name, 'kor': kor, 'eng': eng, 'math': math, 'total': total, 'avg': avg, 'rank': rank}
+    # students.append(ss)
     stuNo += 1 # 학생 수 증가
+
+    # students.txt 파일쓰기
+    f = open('students.txt', 'a', encoding='UTF-8')
+    f.write(f"{no},{name},{kor},{eng},{math},{total},{avg},{rank}\n")
+    f.close()
+    
     print(f"{name} 학생의 성적이 저장되었습니다.\n")
     
   return stuNo
