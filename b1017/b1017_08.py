@@ -47,7 +47,8 @@ def buy(cartNo, product, session_info, choice):
   print(f"{product[choice - 1]['pName']}가 구매되었습니다.\n")
   now = datetime.datetime.now()
   today = now.strftime("%Y-%m-%d %H:%M:%S")
-  c = {f'{cartNo + 1},{session_info['id']},{session_info['name']},{product[choice - 1]['pCode']},{product[choice - 1]['pName']},{product[choice - 1]['price']},{today}'}
+  c = {'cNo': cartNo + 1, 'id': session_info['id'], 'name': session_info['name'], 'pCode': product[choice - 1]['pCode'], 'pName': product[choice - 1]['pName'], 'price': product[choice - 1]['price'], 'date': today}
+  cart.append(c)
   cartNo += 1
   session_info['money'] -= product[choice - 1]['price']
   
