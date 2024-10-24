@@ -14,8 +14,7 @@ for idx, list in enumerate(lists):
   if price <= 80000:
     print(f"{idx + 1}.")
     print('항공사 :', list.select_one('b.airline_name__0Tw5w').text.strip())
-    for time in times:
-      print('소요시간 :', time.text.strip())
+    print('출발시간 :', times[0].text.strip(), '도착시간 :', times[1].text.strip())
     print('가격 :', price)
     print('-' * 30)
   else:
