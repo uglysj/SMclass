@@ -1,5 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
+import csv
 # email 발송관련
 import smtplib
 from email.mime.text import MIMEText
@@ -12,7 +13,6 @@ res = requests.get(url,headers=headers)
 
 # html 전체를 가져옴.
 soup = BeautifulSoup(res.text,"lxml")
-
 # 기준점
 data = soup.select_one("#wrap > div.rankingnews._popularWelBase._persist > div.rankingnews_box_wrap._popularRanking > div")
 ranks = data.select("div.rankingnews_box")
@@ -36,7 +36,7 @@ smtpPort = 587
 
 # 자신의 네이버메일주소,pw, 받는사람이메일주소
 sendEmail = "sjlee_0220@naver.com"
-pw = "VH7EGLBE1L5U"
+pw = "ZWZJ1XWCKD2R"
 recvEmail = "sjlee_0220@naver.com"
 
 title = "랭킹뉴스"
@@ -63,4 +63,5 @@ s.sendmail(sendEmail,recvEmail,msg.as_string())
 print("msg : ")
 print(msg.as_string())
 s.quit()
+
 print("메일이 발송되었습니다.!")
