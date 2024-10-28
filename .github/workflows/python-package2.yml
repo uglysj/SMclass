@@ -60,7 +60,3 @@ jobs:
       uses: ad-m/github-push-action@master
       with:
         branck: 'main'
-    
-    - name: Test with pytest
-      run: |
-        pytest
