@@ -10,7 +10,6 @@ from email.mime.application import MIMEApplication
 url = 'https://news.naver.com/main/ranking/popularDay.naver'
 headers = {"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"}
 res = requests.get(url,headers=headers)
-res.raise_for_status()
 
 # html 전체를 가져옴.
 soup = BeautifulSoup(res.text,"lxml")
