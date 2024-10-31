@@ -66,7 +66,7 @@ while True:
       smtpPort = 587
 
       sendEmail = f'{row[3]}'
-      pw = 'ZWZJ1XWCKD2R'
+      pw = ''
       recvEmail = f'{row[3]}'
 
       title = '임시패스워드 발급'

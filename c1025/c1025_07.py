@@ -29,7 +29,7 @@ with open('c1025/news.txt', 'w+', encoding='UTF-8') as f:
 # smtpPort = 587
 
 # sendmail = 'sjlee_0220@naver.com'
-# password = 'REP7E72SKMVU'
+# password = ''
 # recvmail = 'anjgkwl153@naver.com'
 
 # title = '파이썬으로 네이버 뉴스 보내기'

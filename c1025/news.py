@@ -36,7 +36,7 @@ smtpPort = 587
 
 # 자신의 네이버메일주소,pw, 받는사람이메일주소
 sendEmail = "sjlee_0220@naver.com"
-pw = "ZWZJ1XWCKD2R"
+pw = ""
 recvEmail = "sjlee_0220@naver.com"
 
 title = "랭킹뉴스"
