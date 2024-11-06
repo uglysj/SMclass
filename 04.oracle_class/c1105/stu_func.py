@@ -50,17 +50,20 @@ def stuInput():
   conn.close()
   print('학생성적이 저장되었습니다.\n')
 
-# 2. 학생성적출력 함수선언
-def stuOutput():
+# 2-1. 출력함수 선언
+def stuPrint(*data):
   print('[ 학생성적 출력 ]')
-    
   stuTitle()
 
   # DB연결
   conn = connects()
   cursor = conn.cursor()
-  sql = "select no, name, kor, eng, math, total, round(avg, 2), rank, to_char(sdate, 'yyyy-mm-dd') from students"
-  cursor.execute(sql)
+
+  if len(data) == 1:
+    cursor.execute(data[0])
+  else:
+    cursor.execute(data[0], search = data[1])  
+  
   rows = cursor.fetchall()
   if rows == None: 
     print('데이터가 없습니다.')
@@ -72,6 +75,12 @@ def stuOutput():
         else: print(r, end='\t')
       print()
   print('데이터 출력 완료!')
+  conn.close()
+
+# 2. 학생성적출력 함수선언
+def stuOutput():
+  sql = "select no, name, kor, eng, math, total, round(avg, 2), rank, to_char(sdate, 'yyyy-mm-dd') from students"
+  stuPrint(sql)
 
 # 3. 학생성적검색 함수선언
 def stuSearch():
@@ -85,29 +94,10 @@ def stuSearch():
     search = f'%{search}%'
     sql = "select no, name, kor, eng, math, total, round(avg, 2), rank, to_char(sdate, 'yyyy-mm-dd') from students where name like :search"
     
-    # DB연결
-    conn = connects()
-    cursor = conn.cursor()
-    cursor.execute(sql, search = search)
-    rows = cursor.fetchall()
-    
-    print(f'[개수 : {len(rows)}]')
-    stuTitle()
+    stuPrint(sql, search)
 
-    if rows == None: 
-      print('데이터가 없습니다.')
-      return
-    else:
-      for row in rows:
-        for i, r in enumerate(row):
-          if i == 1: print('{:12s}'.format(r), end='\t')
-          else: print(r, end='\t')
-        print()
-    print('데이터 출력 완료!') 
-  conn.close()
-
-#. 학생성적정렬 함수선언
-def stuArray():
+# 4. 학생성적정렬 함수선언
+def stuSort():
   print('[ 학생성적 정렬 ]')
   print('1. 이름 순차 정렬')
   print('2. 이름 역순 정렬')
@@ -124,20 +114,7 @@ def stuArray():
   elif choice == '4':
     sql = "select no, name, kor, eng, math, total, round(avg, 2), rank, to_char(sdate, 'yyyy-mm-dd') from students order by total desc"
   
-  conn = connects()
-  cursor = conn.cursor()
-  cursor.execute(sql)
-  rows = cursor.fetchall()
-
-  stuTitle() 
-
-  for row in rows:
-    for i, r in enumerate(row):
-      if i == 1: print(f'{r:12s}', end='\t')
-      else: print(r, end='\t')
-    print()  
-
-  conn.close()
+  stuPrint(sql)
 
 # 5. 등수처리 함수선언
 def stuRank():

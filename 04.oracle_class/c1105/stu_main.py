@@ -10,7 +10,7 @@ while True:
   elif choice == '3':
     stu_func.stuSearch()
   elif choice == '4':
-    stu_func.stuArray()
+    stu_func.stuSort()
   elif choice == '5':
     stu_func.stuRank()
   elif choice == '0':
