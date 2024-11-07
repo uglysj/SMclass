@@ -14,17 +14,19 @@ for i in range(2020, 2024):
 
   soup = BeautifulSoup(res.text, 'lxml')
   data = soup.select_one('#mor_history_id_0')
+
   titles = data.select('c-title')
+  contents = data.select('c-contents-desc')
+  dates = data.select('c-contents-desc-sub')
   img_srcs = data.select('c-thumb')
+  
   for j in range(10):
+    movie['제목'].append(titles[j].next.strip())
+    movie['관객수'].append(int(contents[j].next.strip().replace(',','')[3:-2]))
+    movie['날짜'].append(dates[j].next.strip())
+    
     with open(f'd1106/images/{i}_{j+1}.jpg', 'wb') as f:
       get_img = requests.get(img_srcs[j]['data-original-src'])
       f.write(get_img.content)
-  # contents = data.select('c-contents-desc')
-  # dates = data.select('c-contents-desc-sub')
-  # for i in range(10):
-  #   movie['제목'].append(titles[i].next.strip())
-  #   movie['관객수'].append(int(contents[i].next.strip().replace(',','')[3:-2]))
-  #   movie['날짜'].append(dates[i].next.strip())
 
 # print(movie)
