@@ -20,7 +20,64 @@ python -m pip install oracledb
 pip install --upgrade pip
 [디장고 설치]
 pip install Django
+-- manage.py 사용
+python manage.py startapp students
 [디장고 업그레이드]
 pip install Django --upgrade
 [디장고 위치확인]
 python -c "import django; print(django.__path__)"
+[프로젝트 이름 변경]
+move tempPjt tempProject
+[DB 테이블 설치]
+python manage.py migrate
+-- DB에 table 설치, 변경, 삭제, 추가 있는지 확인
+python manage.py makemigrations
+
+-- 관리자 등록
+python manage.py createsuperuser
+
+-- setting.py
+LANGUAGE_CODE = 'ko-kr'
+TIME_ZONE = 'Asia/Seoul'
+-- app추가
+
+-- 서버 구동
+python -u manage.py runserver 0.0.0.0:8000
+-- 브라우저 url
+127.0.0.1:8000
+-- 관리자페이지
+127.0.0.1:8000/admin
+
+-- html 자동완성키 설정
+1. auto close tag 확장팩 설치
+2. ctrl + ,
+3. setting 이라고 입력
+4. setting.json 선택 (Font Ligatures)
+"auto-close-tag.activationOnLanguage": [
+    "*"
+],
+"emmet.includeLanguages": { "django-html": "html" },
+
+python manage.py shell
+from students.models import Student
+-- insert
+qs = Student(s_name='hong1', s_major='컴퓨터공학', s_age=20, s_grade=1, s_gender='M')
+qs.save()
+
+-- select 복수
+qs = Student.objects.all()
+qs[0], qs[1]
+
+-- select 1명
+qs = Student.objects.get(s_name='hong1')
+qs.s_name
+
+-- update
+qs = Student.objects.get(s_name='hong1')
+qs.s_age = 25
+qs.save()
+
+-- delete
+qs = Student.objects.get(s_name='hong1')
+qs.delete()
+qs.save()
