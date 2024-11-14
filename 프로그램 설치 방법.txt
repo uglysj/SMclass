@@ -15,3 +15,12 @@ https://chromedriver.chromium.org/downloads
 
 4. 오라클 라이브러리 설치
 python -m pip install oracledb
+
+5. Django
+pip install --upgrade pip
+[디장고 설치]
+pip install Django
+[디장고 업그레이드]
+pip install Django --upgrade
+[디장고 위치확인]
+python -c "import django; print(django.__path__)"
